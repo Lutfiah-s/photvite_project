@@ -1,14 +1,12 @@
 <?php
-$host = 'containers-us-west-200.railway.app'; // host database dari Railway
-$user = 'root'; // user default
-$password = 'ctLonqvoZCUnJQ'; // password dari Railway
-$database = 'photvite'; // nama database kamu
-$port = 3306; // port dari Railway
+$host = getenv("MYSQLHOST") ?: 'localhost';
+$user = getenv("MYSQLUSER") ?: 'root';
+$password = getenv("MYSQLPASSWORD") ?: '';
+$database = getenv("MYSQLDATABASE") ?: 'photvite';
 
-$conn = new mysqli($host, $user, $password, $database, $port);
+$koneksi = new mysqli($host, $user, $password, $database);
 
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
 ?>
