@@ -1,0 +1,119 @@
+:root {
+  --pink: #f9a8d4;
+  --pink-light: #fde8f0;
+  --pink-dark: #ba3567;
+  --gray-muted: #6c757d;
+  --shadow-glossy: rgba(249, 168, 212, 0.5);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--pink-light);
+  color: #3a3a3a;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-brand {
+  color: var(--pink-dark);
+}
+
+.nav-link {
+  color: var(--pink-dark);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--pink);
+}
+
+/* Buttons */
+.btn-pink {
+  background: var(--pink);
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.6rem 2rem;
+  box-shadow: 0 4px 12px var(--shadow-glossy);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-pink:hover {
+  background: var(--pink-dark);
+  box-shadow: 0 6px 18px rgba(186, 53, 103, 0.8);
+  color: white;
+}
+
+.btn-outline-pink {
+  color: var(--pink-dark);
+  border: 2px solid var(--pink-dark);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.5rem 1.8rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-pink:hover {
+  background: var(--pink);
+  color: white;
+  border-color: var(--pink);
+}
+
+/* Background helper classes */
+.bg-pink-light {
+  background: var(--pink-light);
+}
+
+.bg-pink-dark {
+  background: var(--pink-dark);
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.bg-gradient-pink {
+  background: linear-gradient(135deg, #f9a8d4, #f47aa6);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Card hover zoom and glossy shadow */
+.hover-zoom {
+  transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 6px rgba(249, 168, 212, 0.4));
+}
+
+/* Hero text shadow */
+.hero-text h1 {
+  text-shadow: 0 0 8px rgba(249, 168, 212, 0.7);
+}
+
+/* Card styling */
+.card {
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(249, 168, 212, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 12px 32px rgba(186, 53, 103, 0.4);
+  transform: translateY(-8px);
+}
+
+/* Video styling inside card */
+.card video {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
