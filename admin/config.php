@@ -1,13 +1,16 @@
 <?php
-$host = getenv("MYSQLHOST");
-$user = getenv("MYSQLUSER");
-$pass = getenv("MYSQLPASSWORD");
-$db   = getenv("MYSQLDATABASE");
-$port = getenv("MYSQLPORT");
+// Konfigurasi koneksi database untuk admin
 
-$conn = mysqli_connect($host, $user, $pass, $db, $port);
+$host     = getenv("MYSQLHOST");
+$user     = getenv("MYSQLUSER");
+$password = getenv("MYSQLPASSWORD");
+$database = getenv("MYSQLDATABASE");
+$port     = getenv("MYSQLPORT") ?: 3306;
 
-if (!$conn) {
-  die("Koneksi gagal: " . mysqli_connect_error());
+$conn = new mysqli($host, $user, $password, $database, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi ke database (admin) gagal: " . $conn->connect_error);
 }
 ?>

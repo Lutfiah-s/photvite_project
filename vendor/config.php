@@ -1,13 +1,16 @@
 <?php
-$host = getenv("MYSQLHOST");
-$user = getenv("MYSQLUSER");
+// Konfigurasi koneksi database untuk vendor
+
+$host     = getenv("MYSQLHOST");
+$user     = getenv("MYSQLUSER");
 $password = getenv("MYSQLPASSWORD");
-$dbname = getenv("MYSQLDATABASE");
-$port = getenv("MYSQLPORT");
+$database = getenv("MYSQLDATABASE");
+$port     = getenv("MYSQLPORT") ?: 3306;
 
-$conn = new mysqli($host, $user, $password, $dbname, $port);
+$conn = new mysqli($host, $user, $password, $database, $port);
 
+// Cek koneksi
 if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+    die("Koneksi ke database (vendor) gagal: " . $conn->connect_error);
 }
 ?>
