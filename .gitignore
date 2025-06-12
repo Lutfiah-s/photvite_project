@@ -1,0 +1,17 @@
+# Folder upload (jika tidak ingin disimpan di GitHub)
+uploads/
+
+# File konfigurasi sensitif
+config.php
+
+# Database lokal
+*.sql
+*.sqlite
+*.db
+
+# Sistem bawaan
+.DS_Store
+Thumbs.db
+
+# Folder vendor (jika tidak pakai Composer atau tidak perlu)
+vendor/
